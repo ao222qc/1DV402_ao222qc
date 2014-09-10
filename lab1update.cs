@@ -21,6 +21,8 @@ namespace ConsoleApplication13
 
             {
 
+                Console.WriteLine("Testa ändring commit.");
+
                while (true)
 
                     try
