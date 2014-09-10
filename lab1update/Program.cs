@@ -69,16 +69,15 @@ namespace lab1update
                 Console.WriteLine("RECEIPT");
                 Console.WriteLine("-------------------------------------");
                 Console.WriteLine("Price of product     :{0, 15:c}", productValue);
-                total = (int)Math.Round(productValue);
+                total = (int)Math.Round(productValue, MidpointRounding.AwayFromZero);
                 roundingOffAmount = total - productValue;
                 Console.WriteLine("Sum rounded          :{0, 15:c}", roundingOffAmount);
-                Console.WriteLine("Price to pay         :{0, 15:c}", total);
-                Console.WriteLine("Sum payed in cash    :{0, 15:c}", cashPayment);
+                Console.WriteLine("Price to pay         :{0, 15:c0}", total);
+                Console.WriteLine("Sum payed in cash    :{0, 15:c0}", cashPayment);
                 cashReturn = cashPayment - total;
-                Console.WriteLine("Change               :{0, 15:c}", cashReturn);
+                Console.WriteLine("Change               :{0, 15:c0}", cashReturn);
                 Console.WriteLine("-------------------------------------");
                 Console.Write("\n");
-
 
                 if (cashReturn >= 500)
                 {
@@ -88,7 +87,6 @@ namespace lab1update
 
                 if (cashReturn >= 100)
                 {
-
                     Console.WriteLine("Amount of 100kr bills     : {0}", cashReturn / 100);
                     cashReturn = (cashReturn % 100);
                 }
@@ -98,7 +96,6 @@ namespace lab1update
                     Console.WriteLine("Amount of 50kr bills      : {0}", cashReturn / 50);
                     cashReturn = (cashReturn % 50);
                 }
-
 
                 if (cashReturn >= 20)
                 {
@@ -122,13 +119,9 @@ namespace lab1update
                 {
                     Console.WriteLine("Amount of 1kr coins       : {0}", cashReturn / 1);
                     cashReturn = (cashReturn % 1);
-                }
+                }               
                 Console.Write("\n");
-
-                Console.WriteLine("Thank you for your purchase!");
-
-                Console.Write("\n");
-                Console.WriteLine("Press any key for next costumer or press ESCAPE to exit.");
+                Console.WriteLine("Press any key for next customer or press ESCAPE to exit.");
 
                 if (Console.ReadKey().Key == ConsoleKey.Escape) //Escape avslutar med en break, annan knapp rullar Whilen på.
                 {
@@ -142,3 +135,4 @@ namespace lab1update
 
     }
 }
+
